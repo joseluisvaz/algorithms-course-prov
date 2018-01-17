@@ -35,11 +35,16 @@ void test_solution() {
   }
 }
 
+int gcd_recursive(int num1, int num2) {
+  if (num2 == 0) return num1;
+  if (num2 != 0) return gcd_recursive(num2, num1 % num2);
+}
+
 int main() {
   int num1, num2;
   std::cin >> num1 >> num2;
   //std::cout << gcd_naive(a, b) << std::endl;
   test_solution();
-  std::cout << gcd_fast(num1, num2) << std::endl;
+  std::cout << gcd_recursive(num1, num2) << std::endl;
   return 0;
 }
