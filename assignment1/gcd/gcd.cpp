@@ -37,7 +37,7 @@ void test_solution() {
 
 int gcd_recursive(int num1, int num2) {
   if (num2 == 0) return num1;
-  if (num2 != 0) return gcd_recursive(num2, num1 % num2);
+  return gcd_recursive(num2, num1 % num2);
 }
 
 int main() {
