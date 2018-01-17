@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 
 int gcd_naive(int a, int b) {
   int current_gcd = 1;
@@ -13,10 +14,8 @@ int gcd_naive(int a, int b) {
 }
 
 int gcd_fast(int num1, int num2) {
-
   int remainder;
-
-  while(true) {
+  while (true) {
     remainder = num1 % num2;
     if (remainder == 0)
       return num2;
@@ -25,10 +24,22 @@ int gcd_fast(int num1, int num2) {
   }
 }
 
+void test_solution() {
+  int num1;
+  int num2;
+
+  for (int i = 0; i < 20; ++i) {
+    num1 = rand() % 100 + 1;
+    num2 = rand() % 100 + 1;
+    assert(gcd_naive(num1, num2) == gcd_fast(num1, num2));
+  }
+}
+
 int main() {
   int num1, num2;
   std::cin >> num1 >> num2;
   //std::cout << gcd_naive(a, b) << std::endl;
+  test_solution();
   std::cout << gcd_fast(num1, num2) << std::endl;
   return 0;
 }
