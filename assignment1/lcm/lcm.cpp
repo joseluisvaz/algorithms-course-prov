@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../gcd/gcd.h"
 
 long long lcm_naive(int a, int b) {
   for (long l = 1; l <= (long long) a * b; ++l)
