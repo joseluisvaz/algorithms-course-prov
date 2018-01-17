@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 
 int get_fibonacci_last_digit_naive(int n) {
   if (n <= 1)
@@ -32,9 +33,16 @@ int get_fibonacci_last_digit_fast(int n) {
   return current;
 }
 
+void test_solution() {
+  for (int i = 0; i < 20; ++i) {
+    assert(get_fibonacci_last_digit_naive(i) == get_fibonacci_last_digit_fast(i));
+  }
+}
+
 int main() {
   int n;
   std::cin >> n;
+  //test_solution();
   int c = get_fibonacci_last_digit_fast(n);
   std::cout << c << '\n';
 }
