@@ -29,7 +29,7 @@ int gcd_recursive(int num1, int num2) {
   return gcd_recursive(num2, num1 % num2);
 }
 
-void test_solution() {
+void test_solution_gcd() {
   int num1;
   int num2;
 
@@ -44,7 +44,7 @@ void test_solution() {
   int num1, num2;
   std::cin >> num1 >> num2;
   //std::cout << gcd_naive(a, b) << std::endl;
-  test_solution();
+  test_solution_gcd();
   std::cout << gcd_recursive(num1, num2) << std::endl;
   return 0;
 }*/

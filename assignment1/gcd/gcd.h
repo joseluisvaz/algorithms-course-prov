@@ -11,6 +11,6 @@
 int gcd_naive(int num1, int num2);
 int gcd_fast(int num1, int num2);
 int gcd_recursive(int num1, int num2);
-void test_solution();
+void test_solution_gcd();
 
 #endif //ALGORITHMS_COURSE1_GCD_H
