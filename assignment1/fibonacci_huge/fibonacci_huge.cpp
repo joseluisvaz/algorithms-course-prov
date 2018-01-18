@@ -16,12 +16,12 @@ long long get_fibonacci_huge_naive(long long n, long long m) {
     return current % m;
 }
 
-int get_pisano_period(int m) {
+int get_pisano_period(int divisor) {
   int previous = 0;
   int current = 1;
 
-  for(int i = 1; i < m * m; i++) {
-    int next = (previous + current) % m;
+  for(int i = 1; i < divisor * divisor; i++) {
+    int next = (previous + current) % divisor;
     previous = current;
     current = next;
 
@@ -31,9 +31,28 @@ int get_pisano_period(int m) {
   }
 }
 
+int get_fibonacci_huge_fast(long long n, int divisor) {
+  if (n <= 1) {
+    return n;
+  }
+
+  int remainder = n % get_pisano_period(divisor);
+
+  int previous = 0;
+  int current = 1;
+
+  for (int i = 2; i < remainder + 1; ++i) {
+    int next = (previous + current) % divisor;
+    previous = current;
+    current = next;
+  }
+
+  return current;
+}
+
 int main() {
     long long n, m;
-    std::cout << get_pisano_period(5);
-    //std::cin >> n >> m;
+    std::cin >> n >> m;
+    std::cout << get_fibonacci_huge_fast(n, m);
     //std::cout << get_fibonacci_huge_naive(n, m) << '\n';
 }
