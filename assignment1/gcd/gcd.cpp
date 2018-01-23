@@ -40,11 +40,11 @@ void test_solution_gcd() {
   }
 }
 
-/*int main() {
+int main() {
   int num1, num2;
   std::cin >> num1 >> num2;
   //std::cout << gcd_naive(a, b) << std::endl;
-  test_solution_gcd();
+  //test_solution_gcd();
   std::cout << gcd_recursive(num1, num2) << std::endl;
   return 0;
-}*/
+}
